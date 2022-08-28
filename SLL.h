@@ -16,7 +16,7 @@ typedef struct node
 }Node_t;
 
 
-typedef struct
+typedef struct list
 {
 	u32 Size;
 	Node_t *Head;
