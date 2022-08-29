@@ -30,7 +30,7 @@ typedef enum
 
 
 
-Error_State_t CreateList(List_t *ListAddress);
+Error_State_t CreateList(List_t **ListAddress);
 static Error_State_t List_Empty(List_t *list , List_State_t *ReturnValue);
 Error_State_t AddToFront(List_t *List,s32 Data);
 Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data);
