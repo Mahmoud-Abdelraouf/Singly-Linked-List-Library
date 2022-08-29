@@ -11,5 +11,5 @@ the next node of the same data type.
 - There is fundamental user defined data type you should know them:
 1. struct list/List_t which contain the address that point to the first node in the list at all.
 2. struct node/Node_t which contain the value will be added in and pointer that is point to the next node in the list.
-##- Note that the file ERROR_STATE.h is used to return the state of the function if it is executed without any problems or not by returning the state of the function if it is RER_OK , RET_NOK or RET_NULL_PTR and you should take advantage of this feature to verify that your function is executing properly
+## Note that the file ERROR_STATE.h is used to return the state of the function if it is executed without any problems or not by returning the state of the function if it is RER_OK , RET_NOK or RET_NULL_PTR and you should take advantage of this feature to verify that your function is executing properly
 - These functions can also be easily modified to achieve your own goal.
