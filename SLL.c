@@ -11,7 +11,7 @@ Error_State_t CreateList(List_t **ListAddress)
 		{
 			ListPtr -> Head = NULL;
 			ListPtr -> Size = 0;
-			ListAddress = ListPtr;
+			*ListAddress = ListPtr;
 		}
 		else
 		{
