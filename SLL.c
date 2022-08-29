@@ -1,7 +1,7 @@
 #include "SLL.h"
 
 
-Error_State_t CreateList(List_t *ListAddress)
+Error_State_t CreateList(List_t **ListAddress)
 {
 	Error_State_t FunctionState = RET_OK;
 	if(ListAddress != NULL)
