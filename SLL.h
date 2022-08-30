@@ -29,14 +29,14 @@ typedef enum
 }List_State_t;
 
 
-Error_State_t DisplayData(List_t *List);
-Error_State_t CreateList(List_t **ListAddress);
+extern Error_State_t DisplayData(List_t *List);
+extern Error_State_t CreateList(List_t **ListAddress);
 static Error_State_t List_Empty(List_t *list , List_State_t *ReturnValue);
-Error_State_t AddToFront(List_t *List,s32 Data);
-Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data);
-Error_State_t AddToBack(List_t *List,s32 Data);
-Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data);
-Error_State_t RemoveFromPosistion(List_t *List,s32 *Ret_Data,u8 Pos);
+extern Error_State_t AddToFront(List_t *List,s32 Data);
+extern Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data);
+extern Error_State_t AddToBack(List_t *List,s32 Data);
+extern Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data);
+extern Error_State_t RemoveFromPosistion(List_t *List,s32 *Ret_Data,u8 Pos);
 
 
 
