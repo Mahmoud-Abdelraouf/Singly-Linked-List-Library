@@ -196,3 +196,77 @@ Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data)
 	}
 	return FunctionState;
 }
+
+
+
+Error_State_t RemoveFromPosistion(List_t *List,s32 *Ret_Data,u8 Pos)
+{
+    Error_State_t FunctionState = RET_OK;
+    List_State_t List_State = LIST_NEMPTY;
+    Node_t *PreviousPos = NULL; //to store the address, previous the exact node which the user wants to remove
+    Node_t *NextPos = NULL; //to store the address of the exact node which the user wants to remove
+    //Node_t *BufferPtr = List->Head;
+    if(NULL!=List&&NULL!=Ret_Data)
+    {
+        if(Pos > List->Size || Pos<1)
+        {
+            FunctionState = RET_NOK;
+        }
+        else
+        {
+            List_Empty(List,&List_State);
+            if(List_State == LIST_EMPTY)
+            {
+                printf("Sorry!! The List is EMPTY\n");
+            }
+            else
+            {
+                //is the list have one node
+                if(List->Head->Next == NULL)
+                {
+                    *Ret_Data = List -> Head -> Value;
+                    free(List->Head);
+                    List->Size--;
+                }
+                //if the user want to remove the 1st node in the list
+                else if (Pos==1)
+                {
+                    if(RemoveFromFront(List,Ret_Data)!=RET_NULL_PTR){}
+                    else
+                    {
+                        FunctionState = RET_NULL_PTR;
+                    }
+                }
+                //if the user want to remove the last node in the list
+                else if (Pos==List->Size)
+                {
+                    if(RemoveFromBack(List,Ret_Data)!=RET_NULL_PTR){}
+                    else
+                    {
+                        FunctionState = RET_NULL_PTR;
+                    }
+                }
+                //if the user want to remove certain node from the middle of the node
+                else
+                {
+                    PreviousPos = List->Head;
+                    for(int i = 1;i<Pos-1;i++)
+                    {
+                        PreviousPos = PreviousPos -> Next;
+                    }
+                    NextPos = PreviousPos->Next;
+                    *Ret_Data = NextPos->Value;
+                    PreviousPos->Next = NextPos->Next;
+                    free(NextPos);
+                    List->Size--;
+                }
+            }
+        }
+
+    }
+    else
+    {
+        FunctionState = RET_NULL_PTR;
+    }
+    return FunctionState;
+}
