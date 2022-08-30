@@ -270,3 +270,35 @@ Error_State_t RemoveFromPosistion(List_t *List,s32 *Ret_Data,u8 Pos)
     }
     return FunctionState;
 }
+
+
+
+
+Error_State_t DisplayData(List_t *List)
+{
+    Error_State_t FunctionState = RET_OK;
+    List_State_t List_State = LIST_NEMPTY;
+    Node_t *BufferPtr = List->Head;
+    if(NULL!=List)
+    {
+        List_Empty(List,&List_State);
+        if(List_State == LIST_EMPTY)
+        {
+            printf("Sorry!! The list is EMPTY\n");
+        }
+        else
+        {
+            while(BufferPtr->Next != NULL)
+            {
+                printf("%d\n",BufferPtr->Value);
+                BufferPtr = BufferPtr->Next;
+            }
+            printf("%d\n",BufferPtr->Value);
+        }
+    }
+    else
+    {
+        FunctionState = RET_NULL_PTR;
+    }
+    return FunctionState;
+}
