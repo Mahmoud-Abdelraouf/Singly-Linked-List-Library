@@ -36,6 +36,8 @@ Error_State_t AddToFront(List_t *List,s32 Data);
 Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data);
 Error_State_t AddToBack(List_t *List,s32 Data);
 Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data);
+Error_State_t RemoveFromPosistion(List_t *List,s32 *Ret_Data,u8 Pos);
+
 
 
 
