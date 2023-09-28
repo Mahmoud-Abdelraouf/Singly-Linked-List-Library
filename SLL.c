@@ -47,11 +47,6 @@ Error_State_t CreateList(List_t **ListAddress)
 	return FunctionState;
 }
 
-
-
-
-
-
 Error_State_t AddToFront(List_t *List,s32 Data)
 {
 	Error_State_t FunctionState = RET_OK;
